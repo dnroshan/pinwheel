@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/cc.placid.Pinwheel.desktop.in
+data/cc.placid.Pinwheel.metainfo.xml.in
+data/cc.placid.Pinwheel.gschema.xml
+src/main.c
+src/pinwheel-window.c
+src/pinwheel-window.ui

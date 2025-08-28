@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>cc.placid.Pinwheel</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Pinwheel</name>
+  <summary>A simple vector drawing program</summary>
+  <description>
+    <p>A simple vector drawing program</p>
+  </description>
+
+  <developer id="tld.vendor">
+    <name>Dilnavas Roshan</name>
+  </developer>
+
+  <url type="homepage">https://placid.cc/pinwheel</url>
+  <url type="vcs-browser">https://github.com/dnroshan/pinwheel</url>
+  <url type="bugtracker">https://github.com/dnroshan/pinwheel/issues</url>
+  <url type="translate">https://github.com/dnroshan/pinwheel</url>
+  <url type="faq">https://placid.cc/pinwheel</url>
+  <url type="help">https://placid.cc/pinwheel</url>
+  <url type="donation">https://placid.cc/pinwheel</url>
+  <url type="contact">https://placid.cc/pinwheel</url>
+  <url type="contribute">https://placid.cc/pinwheel</url>
+
+  <translation type="gettext">pinwheel</translation>
+  <launchable type="desktop-id">cc.placid.Pinwheel.desktop</launchable>
+  <content_rating type="oars-1.1" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#ff00ff</color>
+    <color type="primary" scheme_preference="dark">#993d3d</color>
+  </branding>
+
+  <screenshots>
+  </screenshots>
+
+  <releases>
+  </releases>
+
+</component>
