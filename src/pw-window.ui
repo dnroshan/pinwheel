@@ -4,23 +4,71 @@
   <requires lib="Adw" version="1.0"/>
   <template class="PwWindow" parent="AdwApplicationWindow">
     <property name="title" translatable="yes">Pinwheel</property>
-    <property name="default-width">800</property>
+    <property name="default-width">1000</property>
     <property name="default-height">600</property>
     <property name="content">
-      <object class="AdwToolbarView">
-        <child type="top">
-          <object class="AdwHeaderBar">
-            <child type="end">
-              <object class="GtkMenuButton">
-                <property name="primary">True</property>
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Main Menu</property>
-                <property name="menu-model">primary_menu</property>
+      <object class="AdwOverlaySplitView">
+        <property name="sidebar">
+          <object class="AdwToolbarView">
+            <child type="top">
+              <object class="AdwHeaderBar">
+                <child type="end">
+                  <object class="GtkMenuButton">
+                    <property name="tooltip-text">Main Menu</property>
+                    <property name="icon_name">open-menu-symbolic</property>
+                    <property name="menu-model">primary_menu</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>
-        </child>
+        </property>
         <property name="content">
+          <object class="AdwToolbarView">
+            <child type="top">
+              <object class="AdwHeaderBar">
+                <property name="title-widget">
+                  <object class="AdwToggleGroup">
+                    <child>
+                      <object class="AdwToggle">
+                        <property name="icon-name">selection-tool-symbolic</property>
+                        <property name="tooltip">Pointer Tool</property>
+                        <property name="name">pointer-tool</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwToggle">
+                        <property name="icon-name">line-tool-symbolic</property>
+                        <property name="tooltip">Line Tool</property>
+                        <property name="name">line-tool</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwToggle">
+                        <property name="icon-name">rectangle-tool-symbolic</property>
+                        <property name="tooltip">Rectangle Tool</property>
+                        <property name="name">rectangle-tool</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwToggle">
+                        <property name="icon-name">polygon-tool-symbolic</property>
+                        <property name="tooltip">Polygon Tool</property>
+                        <property name="name">polygon-tool</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwToggle">
+                        <property name="icon-name">pen-tool-symbolic</property>
+                        <property name="tooltip">Pen Tool</property>
+                        <property name="name">pen-tool</property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
         </property>
       </object>
     </property>
