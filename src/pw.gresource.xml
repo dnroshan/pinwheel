@@ -11,5 +11,6 @@
     <file alias="polygon-tool-symbolic.svg" preprocess="xml-stripblanks">icons/symbolic/polygon-tool-symbolic.svg</file>
     <file alias="ellipse-tool-symbolic.svg" preprocess="xml-stripblanks">icons/symbolic/ellipse-tool-symbolic.svg</file>
     <file alias="pen-tool-symbolic.svg" preprocess="xml-stripblanks">icons/symbolic/pen-tool-symbolic.svg</file>
+  <file alias="text-tool-symbolic.svg" preprocess="xml-stripblanks">icons/symbolic/text-tool-symbolic.svg</file>
   </gresource>
 </gresources>

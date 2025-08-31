@@ -52,6 +52,13 @@
                     </child>
                     <child>
                       <object class="AdwToggle">
+                        <property name="icon-name">ellipse-tool-symbolic</property>
+                        <property name="tooltip">Ellipse Tool</property>
+                        <property name="name">ellipse-tool</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwToggle">
                         <property name="icon-name">polygon-tool-symbolic</property>
                         <property name="tooltip">Polygon Tool</property>
                         <property name="name">polygon-tool</property>
@@ -64,8 +71,38 @@
                         <property name="name">pen-tool</property>
                       </object>
                     </child>
+                    <child>
+                      <object class="AdwToggle">
+                        <property name="icon-name">text-tool-symbolic</property>
+                        <property name="tooltip">Text Tool</property>
+                        <property name="name">text-tool</property>
+                      </object>
+                    </child>
                   </object>
                 </property>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="icon-name">document-open-symbolic</property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="icon-name">document-save-symbolic</property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkSeparator"></object>
+                </child>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="icon-name">edit-undo-symbolic</property>
+                  </object>
+                </child>
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="icon-name">edit-redo-symbolic</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>
