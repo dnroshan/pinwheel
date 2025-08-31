@@ -2,6 +2,7 @@ pinwheel_sources = [
   'main.c',
   'pw-application.c',
   'pw-window.c',
+  'pw-canvas.c',
 ]
 
 pinwheel_deps = [
