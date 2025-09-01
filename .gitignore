@@ -1,0 +1,7 @@
+build
+buildir
+.buildconfig
+.flatpak-builder
+*.syscap
+*.swp
+*~
