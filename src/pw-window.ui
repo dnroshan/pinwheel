@@ -105,6 +105,9 @@
                 </child>
               </object>
             </child>
+            <property name="content">
+              <object class="PwCanvas"></object>
+          </property>
           </object>
         </property>
       </object>

@@ -20,6 +20,7 @@
 
 #include "config.h"
 #include "pw-window.h"
+#include "pw-canvas.h"
 
 struct _PwWindow
 {
@@ -43,5 +44,7 @@ pw_window_class_init (PwWindowClass *klass)
 static void
 pw_window_init (PwWindow *self)
 {
+    g_type_ensure (PW_TYPE_CANVAS);
+
     gtk_widget_init_template (GTK_WIDGET (self));
 }

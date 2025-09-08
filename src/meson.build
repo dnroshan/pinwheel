@@ -3,6 +3,7 @@ pinwheel_sources = [
   'pw-application.c',
   'pw-window.c',
   'pw-canvas.c',
+  'pw-canvas-object.c',
 ]
 
 pinwheel_deps = [
