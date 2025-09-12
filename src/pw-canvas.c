@@ -25,10 +25,6 @@
 struct _PwCanvas
 {
     GtkWidget parent_instance;
-
-    PwCanvasObject *root;
-    PwCanvasObject *grab_object;
-    PwCanvasObject *focus_object;
 };
 
 static void pw_canvas_get_property (GObject   *object,
@@ -43,6 +39,8 @@ static void pw_canvas_set_property (GObject      *object,
 
 static void pw_canvas_dispose      (GObject *self);
 static void pw_canvas_finalize     (GObject *self);
+
+static GtkSizeRequestMode pw_canvas_get_request_mode (GtkWidget *self);
 
 static void pw_canvas_measure       (GtkWidget      *widget,
                                      GtkOrientation  orientation,
@@ -113,6 +111,7 @@ pw_canvas_class_init (PwCanvasClass *klass)
     object_class->finalize     = pw_canvas_finalize;
 
     widget_class->measure       = pw_canvas_measure;
+    widget_class->get_request_mode = pw_canvas_get_request_mode;
     widget_class->size_allocate = pw_canvas_size_allocate;
     widget_class->snapshot      = pw_canvas_snapshot;
 }
@@ -170,6 +169,12 @@ static void
 pw_canvas_finalize (GObject *self)
 {
     G_OBJECT_CLASS (pw_canvas_parent_class)->finalize (self);
+}
+
+static GtkSizeRequestMode
+pw_canvas_get_request_mode (GtkWidget *self)
+{
+    return GTK_SIZE_REQUEST_HEIGHT_FOR_WIDTH;
 }
 
 static void

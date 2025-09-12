@@ -22,7 +22,6 @@
 #pragma once
 
 #include <gtk/gtk.h>
-#include "pw-canvas-object.h"
 
 G_BEGIN_DECLS
 
