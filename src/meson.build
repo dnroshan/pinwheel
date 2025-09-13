@@ -2,8 +2,9 @@ pinwheel_sources = [
   'main.c',
   'pw-application.c',
   'pw-window.c',
-  'pw-canvas.c',
 ]
+
+subdir('canvas')
 
 pinwheel_deps = [
   dependency('gtk4'),

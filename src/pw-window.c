@@ -20,14 +20,15 @@
 
 #include "config.h"
 #include "pw-window.h"
-#include "pw-canvas.h"
+#include "canvas/pw-canvas.h"
+#include "canvas/pw-element-rectangle.h"
 
 struct _PwWindow
 {
     AdwApplicationWindow  parent_instance;
 
     /* Template widgets */
-    GtkLabel            *label;
+    PwCanvas *canvas;
 };
 
 G_DEFINE_FINAL_TYPE (PwWindow, pw_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -38,7 +39,7 @@ pw_window_class_init (PwWindowClass *klass)
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
     gtk_widget_class_set_template_from_resource (widget_class, "/cc/placid/pinwheel/pw-window.ui");
-    /* gtk_widget_class_bind_template_child (widget_class, PwWindow, label); */
+    gtk_widget_class_bind_template_child (widget_class, PwWindow, canvas);
 }
 
 static void
@@ -47,4 +48,8 @@ pw_window_init (PwWindow *self)
     g_type_ensure (PW_TYPE_CANVAS);
 
     gtk_widget_init_template (GTK_WIDGET (self));
+
+    PwElement *root = pw_element_rectange (0, 0, 0, 0);
+    pw_canvas_set_root (self->canvas, root);
+    g_object_unref (root);
 }

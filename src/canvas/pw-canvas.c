@@ -25,6 +25,8 @@
 struct _PwCanvas
 {
     GtkWidget parent_instance;
+
+    PwElement *root;
 };
 
 static void pw_canvas_get_property (GObject   *object,
@@ -200,6 +202,9 @@ static void
 pw_canvas_snapshot (GtkWidget   *self,
                     GtkSnapshot *snapshot)
 {
+    PwCanvas *canvas = PW_CANVAS (self);
+    if (canvas->root)
+        pw_element_snapshot (canvas->root, snapshot);
 }
 
 static void
@@ -275,4 +280,11 @@ GtkWidget *
 pw_canvas_new (void)
 {
     return g_object_new (PW_TYPE_CANVAS, NULL);
+}
+
+void
+pw_canvas_set_root (PwCanvas  *self,
+                    PwElement *root)
+{
+    self->root = g_object_ref (root);
 }

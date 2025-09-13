@@ -1,5 +1,5 @@
 /*
- * pw-canvas.h
+ * pw-element.h
  *
  * Copyright 2025 Dilnavas Roshan <dilnavasroshan@gmail.com>
  *
@@ -22,12 +22,31 @@
 #pragma once
 
 #include <gtk/gtk.h>
+#include "canvas/pw-element.h"
 
 G_BEGIN_DECLS
 
-#define PW_TYPE_CANVAS (pw_canvas_get_type ())
-G_DECLARE_FINAL_TYPE (PwCanvas, pw_canvas, PW, CANVAS, GtkWidget)
+#define PW_TYPE_ELEMENT (pw_element_get_type ())
+G_DECLARE_DERIVABLE_TYPE (PwElement, pw_element, PW, ELEMENT, GObject)
 
-GtkWidget *pw_canvas_new (void);
+struct _PwElementClass
+{
+    GObjectClass parent_class;
+
+    void (*snapshot) (PwElement *self, GtkSnapshot *snapshot);
+};
+
+gdouble pw_element_get_x (PwElement *self);
+gdouble pw_element_get_y (PwElement *self);
+
+void  pw_element_set_pos (PwElement *self,
+                          gdouble    x,
+                          gdouble    y);
+void  pw_element_set_x   (PwElement *self,
+                          gdouble    value);
+void  pw_element_set_y   (PwElement *self,
+                          gdouble    value);
+
+void pw_element_snapshot (PwElement *self, GtkSnapshot *snapshot);
 
 G_END_DECLS
