@@ -1,0 +1,38 @@
+/*
+ * pw-element-group.h
+ *
+ * Copyright 2025 Dilnavas Roshan <dilnavasroshan@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+#pragma once
+
+#include "pw-element.h"
+
+G_BEGIN_DECLS
+
+#define PW_TYPE_ELEMENT_GROUP (pw_element_group_get_type ())
+G_DECLARE_FINAL_TYPE (PwElementGroup, pw_element_group, PW, ELEMENT_GROUP, PwElement)
+
+PwElement *pw_element_group_new (void);
+
+void pw_element_group_add    (PwElementGroup *self,
+                              PwElement      *element);
+void pw_element_group_remove (PwElementGroup *self,
+                              PwElement      *element);
+
+G_END_DECLS
